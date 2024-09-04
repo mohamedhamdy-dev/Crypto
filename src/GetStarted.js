@@ -1,3 +1,5 @@
+import img41 from './Images/41.png';
+
 export function GetStarted() {
   return (
     <div className="relative  z-10 mt-10 bg-[#e7e7e7] text-primary ">
@@ -23,7 +25,7 @@ export function GetStarted() {
         </section>
 
         <div className=" basis-2/4 ">
-          <img src="/Images/41.png" alt="" className="mx-auto" />
+          <img src={img41} alt="" className="mx-auto" />
         </div>
       </div>
     </div>

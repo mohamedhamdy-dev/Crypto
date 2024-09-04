@@ -45,8 +45,9 @@ function Benefit({ benefit }) {
 
   return (
     <div>
-      <div className=" h-1 w-full bg-primary"></div>
-      <h3 className="mt-4 text-base">{title}</h3>
+      <h3 className="mt-4 border-t-2 border-primary pt-3 text-base ">
+        {title}
+      </h3>
       <p className="text-sm">{text}</p>
     </div>
   );

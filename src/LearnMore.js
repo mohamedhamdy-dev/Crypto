@@ -1,8 +1,10 @@
+import img51 from './Images/51.png';
+
 export function LearnMore() {
   return (
     <div className="my-10 flex flex-col-reverse gap-10 lg:my-0 lg:flex-row">
       <div className="lg:basis-2/5">
-        <img src="/Images/51.png" alt="" className="" />
+        <img src={img51} alt="" className="" />
       </div>
       <section className="basis-2/5 flex-col items-center gap-2 self-center text-center lg:flex">
         <h1 className="text-6xl sm:text-7xl 2xl:text-8xl ">

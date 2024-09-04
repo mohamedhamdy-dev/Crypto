@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import useScreenSize from './useScreenSize';
+import logo from './Images/Logo.png';
+import search from './Images/Search.png';
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -22,7 +24,7 @@ export default function Header() {
   return (
     <header className="relative  mx-auto flex items-center justify-between md:container lg:px-10">
       <div className="p-2">
-        <img className=" mx-auto max-w-14 " src="/Images/Logo.png" alt="logo" />
+        <img className=" mx-auto max-w-14 " src={logo} alt="logo" />
         <h1 className="-mt-2">Coinmyte.</h1>
       </div>
 
@@ -90,7 +92,7 @@ export default function Header() {
       </nav>
 
       <div className="hidden p-4 lg:block">
-        <img src="Images/Search.png" alt="Search Icon" />
+        <img src={search} alt="Search Icon" />
       </div>
     </header>
   );

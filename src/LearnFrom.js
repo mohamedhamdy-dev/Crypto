@@ -1,27 +1,34 @@
+import img1 from './Images/61.png';
+import img2 from './Images/62.png';
+import img3 from './Images/63.png';
+import img4 from './Images/64.png';
+import img5 from './Images/65.png';
+import img6 from './Images/65.png';
+
 const cardData = [
   {
     title: 'All About Market Caps',
-    img: '/Images/61.png',
+    img: img1,
   },
   {
     title: 'Using The Platform',
-    img: '/Images/62.png',
+    img: img2,
   },
   {
     title: 'Digital Currencies',
-    img: '/Images/63.png',
+    img: img3,
   },
   {
     title: 'Terminologies',
-    img: '/Images/64.png',
+    img: img4,
   },
   {
     title: 'Trading Techniques',
-    img: '/Images/65.png',
+    img: img5,
   },
   {
     title: 'Emerging Tokens',
-    img: '/Images/66.png',
+    img: img6,
   },
 ];
 
@@ -53,25 +60,6 @@ export function LearnFrom() {
       <div className=" justify-self-center">
         <LearnFromCard card={cardData[5]} />
       </div>
-      {/* 
-      <div className=" lg:justify-self-start">
-        <LearnFromCard card={cardData[0]} />
-      </div>
-      <div className=" lg:justify-self-end">
-        <LearnFromCard card={cardData[1]} />
-      </div>
-      <div className=" lg:justify-self-start">
-        <LearnFromCard card={cardData[2]} />
-      </div>
-      <div className=" lg:justify-self-end">
-        <LearnFromCard card={cardData[3]} />
-      </div>
-      <div className=" lg:justify-self-start">
-        <LearnFromCard card={cardData[4]} />
-      </div>
-      <div className=" lg:justify-self-end">
-        <LearnFromCard card={cardData[5]} />
-      </div> */}
     </div>
   );
 }
