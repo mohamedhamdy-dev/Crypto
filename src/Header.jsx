@@ -2,6 +2,14 @@ import { useEffect, useState } from 'react';
 import useScreenSize from './useScreenSize';
 import logo from './Images/Logo.png';
 import search from './Images/Search.png';
+// import NavLink from './ui/Navlink';
+import { BsInfoCircleFill } from 'react-icons/bs';
+import { TiInfoLarge } from 'react-icons/ti';
+import { SlSocialDropbox } from 'react-icons/sl';
+import { PiTrademarkRegisteredBold } from 'react-icons/pi';
+import { ImProfile } from 'react-icons/im';
+import { IoIosSearch } from 'react-icons/io';
+import Navlink from './ui/Navlink';
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -18,9 +26,6 @@ export default function Header() {
     setIsNavOpen((state) => !state);
   }
 
-  const navButtonStyle = `1  inline-block bg-transparent px-3  py-2 hover:bg-white hover:text-black duration-300 uppercase text-sm
-                ${isNavOpen ? 'w-[90%] rounded-lg py-3' : 'rounded-full'} `;
-
   return (
     <header className="relative  mx-auto flex items-center justify-between md:container lg:px-10">
       <div className="p-2">
@@ -29,56 +34,26 @@ export default function Header() {
       </div>
 
       <nav className="flex">
-        <ul
-          className={`gap-5 md:flex ${isNavOpen ? 'flex h-[90vh] justify-center gap-12 text-center' : 'hidden items-center  '} 
-          absolute right-0 top-[117%] w-full flex-col  bg-primary md:static md:mr-8 md:flex-row`}
-        >
-          <li>
-            <a
-              className={`1  inline-block bg-transparent px-4  py-1 uppercase hover:bg-white hover:text-black
-                ${isNavOpen ? 'w-[90%] rounded-lg py-3' : 'rounded-full'} `}
-              href="#Home"
-              onClick={() => setIsNavOpen(false)}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              className={navButtonStyle}
-              href="#About Us"
-              onClick={() => setIsNavOpen(false)}
-            >
-              About Us
-            </a>
-          </li>
-          <li>
-            <a
-              className={navButtonStyle}
-              href="#Swap"
-              onClick={() => setIsNavOpen(false)}
-            >
-              Swap
-            </a>
-          </li>
-          <li>
-            <a
-              className={navButtonStyle}
-              href="#Donate"
-              onClick={() => setIsNavOpen(false)}
-            >
-              Donate
-            </a>
-          </li>
-          <li>
-            <a
-              className={navButtonStyle}
-              href="#Get Started"
-              onClick={() => setIsNavOpen(false)}
-            >
-              Get Started
-            </a>
-          </li>
+        <ul className="flex items-center gap-5 rounded-xl bg-white px-10 py-5 text-black shadow-md ">
+          <Navlink link="#about-us">
+            <ImProfile className="size-6" />
+            About Us
+          </Navlink>
+
+          <Navlink link="#features">
+            <SlSocialDropbox className="size-6" />
+            Features
+          </Navlink>
+
+          <Navlink link="#trading">
+            <PiTrademarkRegisteredBold className="size-6" />
+            Trading
+          </Navlink>
+
+          <Navlink link="#learn">
+            <TiInfoLarge className="size-6" />
+            Learn
+          </Navlink>
         </ul>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +67,7 @@ export default function Header() {
       </nav>
 
       <div className="hidden p-4 lg:block">
-        <img src={search} alt="Search Icon" />
+        <IoIosSearch className="size-10 cursor-pointer duration-300 hover:scale-110" />
       </div>
     </header>
   );
