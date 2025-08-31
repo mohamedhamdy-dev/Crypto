@@ -1,33 +1,34 @@
-import logo from './Images/Logo.png';
+import { motion } from 'motion/react';
 
 const sections = [
   {
     title: '01 - Versatile',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda molestiae pariatur aspernatur! Similique dolore at labore optio inventore eos officiis esse modi minima earum dignissimos! Architecto .',
+    text: 'Crypto adapts to your needs, whether you are a beginner or a seasoned trader. Our platform is designed to support a wide range of currencies and investment strategies.',
   },
   {
     title: '03 - Transparent',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda molestiae pariatur aspernatur! Similique dolore at labore optio inventore eos officiis esse modi minima earum dignissimos! Architecto .',
+    text: 'We believe in clarity. Every transaction, rate, and fee is fully visible—no hidden charges, no surprises, just trust and transparency.',
   },
   {
     title: '02 - Easy To Use',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda molestiae pariatur aspernatur! Similique dolore at labore optio inventore eos officiis esse modi minima earum dignissimos! Architecto .',
+    text: 'With a clean and intuitive interface, Crypto makes trading and managing digital assets straightforward and stress-free.',
   },
   {
     title: '04 - Real Time',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda molestiae pariatur aspernatur! Similique dolore at labore optio inventore eos officiis esse modi minima earum dignissimos! Architecto .',
+    text: 'Stay ahead with live market data, instant updates, and fast transactions—giving you the power to act at the right moment.',
   },
 ];
 
 export function Features() {
   return (
     <div
-      className=" container mx-auto mt-24 flex flex-col 
-     items-center gap-10 text-center md:grid md:grid-cols-2 lg:mt-0 
-     lg:grid-cols-3 lg:grid-rows-3  lg:gap-0 "
+      id="features"
+      className=" container mx-auto mt-24 flex h-screen
+     flex-col items-center gap-10 text-center md:grid md:grid-cols-2
+     lg:mt-0 lg:grid-cols-3  lg:grid-rows-3  lg:gap-0"
     >
       <h2
-        className=" col-span-2 row-span-1 mb-16 text-6xl md:text-8xl lg:col-span-1 lg:col-start-2 
+        className=" col-span-2 row-span-1 mb-16 text-6xl md:text-8xl lg:col-span-1 lg:col-start-2
        lg:col-end-3 lg:-mt-32 lg:mb-0 "
       >
         Features
@@ -47,8 +48,8 @@ export function Features() {
       </div>
 
       <div
-        className=" col-span-2 flex  flex-col 
-      items-center justify-self-center pb-14 sm:w-[65%] 
+        className=" col-span-2 flex  flex-col
+      items-center justify-self-center pb-14 sm:w-[65%]
        lg:col-start-2 lg:col-end-3 lg:row-span-3  lg:row-start-2 lg:-mt-20  xl:w-full "
       >
         <FeatureApp />
@@ -60,18 +61,28 @@ export function Features() {
 function FeatureSection({ sectionData }) {
   const { title, text } = sectionData;
   return (
-    <section className="text-balance text-center">
+    <motion.section
+      initial={{ scale: 0, rotate: 360 }}
+      whileInView={{ scale: 1, rotate: 0 }}
+      transition={{ type: 'spring' }}
+      className="text-balance text-center"
+    >
       <h3 className="text-lg">{title}</h3>
-      <p className=" mx-auto  max-w-96 text-balance p-4 text-sm">{text}</p>
-    </section>
+      <p className=" mx-auto  max-w-96 text-balance p-4 pt-2 text-sm">{text}</p>
+    </motion.section>
   );
 }
 
 function FeatureApp() {
   return (
-    <div className="flex flex-col gap-4 rounded-2xl bg-white  px-14 py-16 pt-8 text-primary">
+    <motion.div
+      initial={{ scale: 0 }}
+      whileInView={{ scale: 1 }}
+      transition={{ type: 'spring' }}
+      className="flex flex-col gap-4 rounded-2xl bg-white  px-14 py-16 pt-8 text-primary"
+    >
       <div className="mx-auto w-fit ">
-        <img src={logo} alt="" />
+        <img src="/logo.png" alt="" />
         <h4 className="">Coinmyte.</h4>
       </div>
       <div className="">EURO to GC</div>
@@ -110,6 +121,6 @@ function FeatureApp() {
           TRADING BASICS
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }

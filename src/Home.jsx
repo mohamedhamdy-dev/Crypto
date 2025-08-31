@@ -1,44 +1,66 @@
 import Button from './ui/Button';
-import img11 from './Images/11.png';
-import img12 from './Images/12.png';
+import { motion } from 'motion/react';
 
 export function Home() {
   return (
     <div
-      className="container mx-auto mb-8 flex flex-col  gap-8  py-20 text-white 
-    lg:grid lg:grid-cols-3 lg:gap-10 lg:px-10 "
+      className="container mx-auto mb-8 flex flex-col gap-8 py-20 text-white 
+      lg:grid lg:grid-cols-3 lg:gap-10 lg:px-10 "
     >
-      <div className="flex flex-col justify-end">
-        <pre className="text-center text-xl lg:text-left">WE MADE It EASY</pre>
-        <h1 className="mx-auto mt-20  text-center text-8xl lg:mt-40 lg:text-left">
-          Trade Crypto.
-        </h1>
-        <div className="mt-24 flex justify-center gap-10 lg:mt-10 lg:justify-start">
-          <Button className="sm:text-base lg:text-sm ">GET STARTED</Button>
-          <Button className="sm:text-base lg:text-sm">LEARN MORE</Button>
-        </div>
-      </div>
+      {/* Left section */}
+      <motion.div
+        initial={{ x: -80 }}
+        whileInView={{ x: 0 }}
+        transition={{ type: 'spring' }}
+        className="flex flex-col justify-center gap-12"
+      >
+        <pre className="text-center text-xl tracking-wider lg:text-left lg:text-2xl">
+          WE MADE It EASY
+        </pre>
 
+        <h2 className="mx-auto  text-center text-8xl font-bold leading-tight  lg:text-left">
+          Trade Smarter.
+        </h2>
+
+        <div className="">
+          <Button className="sm:text-base lg:text-sm">Get Started</Button>
+        </div>
+      </motion.div>
+
+      {/* Middle section (main image) */}
       <div className="mx-auto">
-        <img
-          src={img11}
+        <motion.img
+          initial={{ scale: 0, rotate: 360 }}
+          whileInView={{ scale: 1, rotate: 0 }}
+          whileHover={{ rotate: 12 }}
+          transition={{ type: 'spring' }}
+          src="/Home/11.png"
           className="h-auto w-full object-cover lg:relative lg:top-24 xl:top-5"
-          alt="crypto1"
+          alt="Crypto trading illustration"
         />
       </div>
 
-      <div className="flex flex-col items-center justify-end text-center lg:items-start lg:text-left ">
+      {/* Right section */}
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ type: 'spring' }}
+        className="flex flex-col items-center justify-end text-center lg:items-start lg:text-left "
+      >
         <div>
-          <img className="lg:-ml-7 " src={img12} alt="crypto2" />
+          <img
+            className="duration-300 hover:scale-110 lg:-ml-7"
+            src="/Home/12.png"
+            alt="Decentralized network"
+          />
         </div>
-        <h1 className=" lg:text-lg">Decentralized - 01</h1>
-        <p className=" w-[90%] max-w-96  text-xs sm:text-sm ">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
-          deserunt minima minus corrupti ducimus dolore, accusamus nostrum
-          mollitia itaque corporis similique accusantium, dolores iste possimus
-          autem. Adipisci unde dolorem consequuntur Lorem,
+        <h2 className="mt-6 font-semibold lg:text-lg">Decentralized Power</h2>
+        <p className="w-[90%] max-w-96 text-xs leading-relaxed sm:text-sm">
+          Say goodbye to banks and middlemen. With blockchain, your money moves
+          instantly, securely, and globally—giving you full control over your
+          assets. Experience finance without borders.
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 }

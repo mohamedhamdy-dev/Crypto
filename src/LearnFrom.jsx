@@ -1,34 +1,29 @@
-import img1 from './Images/61.png';
-import img2 from './Images/62.png';
-import img3 from './Images/63.png';
-import img4 from './Images/64.png';
-import img5 from './Images/65.png';
-import img6 from './Images/65.png';
+import { motion } from 'motion/react';
 
 const cardData = [
   {
     title: 'All About Market Caps',
-    img: img1,
+    img: '/LearnFrom/61.png',
   },
   {
     title: 'Using The Platform',
-    img: img2,
+    img: '/LearnFrom/62.png',
   },
   {
     title: 'Digital Currencies',
-    img: img3,
+    img: '/LearnFrom/63.png',
   },
   {
     title: 'Terminologies',
-    img: img4,
+    img: '/LearnFrom/64.png',
   },
   {
     title: 'Trading Techniques',
-    img: img5,
+    img: '/LearnFrom/65.png',
   },
   {
     title: 'Emerging Tokens',
-    img: img6,
+    img: '/LearnFrom/66.png',
   },
 ];
 
@@ -69,7 +64,15 @@ function LearnFromCard({ card }) {
 
   return (
     <a href="#1" className="">
-      <img className="md:-ml-5  lg:-ml-6 " src={img} alt="" />
+      <motion.img
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        whileHover={{ rotate: 12 }}
+        transition={{ type: 'spring' }}
+        className="md:-ml-5 lg:-ml-6"
+        src={img}
+        alt={title}
+      />
       <h2 className="lg:text-md text-center md:text-left ">{title}</h2>
     </a>
   );

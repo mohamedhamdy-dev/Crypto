@@ -1,28 +1,40 @@
+import { motion } from 'motion/react';
+
 const BenefitData = [
   {
     title: 'BENEFIT 01',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, quia. Atque quam, maiores iure enim, sunt porro quia quae provident voluptates excepturi necessitatibus saepe temporibus delectus iste perspiciatis vel quis magni inventore odio numquam labore nisi distinctio obcaecati. Facere, quam!',
+    text: 'Cryptocurrencies allow you to send and receive money instantly, anywhere in the world. No banks, no middlemen, and no delays—just fast, borderless transactions that work 24/7.',
   },
   {
     title: 'BENEFIT 02',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, quia. Atque quam, maiores iure enim, sunt porro quia quae provident voluptates excepturi necessitatibus saepe temporibus delectus iste perspiciatis vel quis magni inventore odio numquam labore nisi distinctio obcaecati. Facere, quam!',
+    text: 'Blockchain technology ensures security and transparency. Every transaction is recorded on a public ledger that cannot be altered, building trust without needing third parties.',
   },
   {
     title: 'BENEFIT 03',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, quia. Atque quam, maiores iure enim, sunt porro quia quae provident voluptates excepturi necessitatibus saepe temporibus delectus iste perspiciatis vel quis magni inventore odio numquam labore nisi distinctio obcaecati. Facere, quam!',
+    text: 'Crypto gives you full control over your assets. Unlike traditional finance, you own your private keys, which means your funds are truly yours—free from restrictions or freezes.',
   },
 ];
 
 export function WhyCrypto() {
   return (
-    <div className="bg-[#e7e7e7] text-primary">
+    <div className="overflow-x-clip bg-[#e7e7e7] text-primary">
       <div className="container relative mx-auto flex flex-col items-center gap-6 py-20 text-center lg:grid lg:grid-cols-3 lg:gap-x-28">
-        <h1 className="text-center text-lg lg:col-span-3 lg:text-xl">
+        <motion.h2
+          initial={{ x: 400 }}
+          whileInView={{ x: 0 }}
+          transition={{ type: 'spring', stiffness: 80 }}
+          className="text-center text-lg lg:col-span-3 lg:text-xl"
+        >
           WE MADE IT EASIER
-        </h1>
-        <h2 className="mb-20 text-center text-6xl lg:col-span-3 lg:text-7xl">
+        </motion.h2>
+        <motion.h3
+          initial={{ x: -400 }}
+          whileInView={{ x: 0 }}
+          transition={{ type: 'spring', stiffness: 80 }}
+          className="mb-20 text-center text-6xl lg:col-span-3 lg:text-7xl"
+        >
           Why Crypto?
-        </h2>
+        </motion.h3>
 
         <div className=" lg:col-start-1">
           <Benefit benefit={BenefitData[0]} />
@@ -44,11 +56,15 @@ function Benefit({ benefit }) {
   const { title, text } = benefit;
 
   return (
-    <div>
-      <h3 className="mt-4 border-t-2 border-primary pt-3 text-base ">
+    <motion.div
+      initial={{ scaleX: 0 }}
+      whileInView={{ scaleX: 1 }}
+      transition={{ type: 'spring' }}
+    >
+      <h4 className="mt-4 border-t-2 border-primary pt-3 text-base ">
         {title}
-      </h3>
+      </h4>
       <p className="text-sm">{text}</p>
-    </div>
+    </motion.div>
   );
 }
