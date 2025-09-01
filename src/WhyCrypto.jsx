@@ -20,7 +20,6 @@ export function WhyCrypto() {
   const { width } = useWindowSize();
   const isSmallMobile = width < 500;
 
-  console.log(isSmallMobile);
   return (
     <div className="overflow-x-clip bg-[#e7e7e7] text-primary">
       <div className="container relative mx-auto flex flex-col items-center gap-6 py-20 text-center lg:grid lg:grid-cols-3 lg:gap-x-28">

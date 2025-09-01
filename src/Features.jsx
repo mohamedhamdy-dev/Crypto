@@ -77,7 +77,7 @@ function FeatureApp() {
       className="flex flex-col gap-4 rounded-2xl bg-white px-14 py-16 pt-8 text-primary"
     >
       <div className="mx-auto w-fit ">
-        <img src="/logo.png" alt="" />
+        <img src="/logo.png" alt="app logo" />
         <h4 className="">Coinmyte.</h4>
       </div>
       <div className="">EURO to GC</div>

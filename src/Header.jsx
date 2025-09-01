@@ -40,7 +40,7 @@ export default function Header() {
         href="/"
         className="order-2 p-2 md:order-1"
       >
-        <motion.img className=" mx-auto max-w-14 " src="/logo.png" alt="logo" />
+        <motion.img className="mx-auto max-w-14 " src="/logo.png" alt="logo" />
         <h1 className="-mt-2 antialiased">Crypto</h1>
       </motion.a>
 
