@@ -1,27 +1,33 @@
 import { useEffect, useState } from 'react';
-import useScreenSize from './useScreenSize';
-import { TiInfoLarge } from 'react-icons/ti';
-import { SlSocialDropbox } from 'react-icons/sl';
-import { PiTrademarkRegisteredBold } from 'react-icons/pi';
-import { ImProfile } from 'react-icons/im';
-import Navlink from './ui/Navlink';
-import { motion } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 import { MdLanguage } from 'react-icons/md';
 import { IoIosList } from 'react-icons/io';
+import { useWindowSize } from './hooks/useWindowSize';
+import NavList from './ui/NavList';
+import MobileNav from './ui/MobileNav';
 
 export default function Header() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const screenSize = useScreenSize();
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const { width } = useWindowSize();
 
-  useEffect(
-    function () {
-      if (screenSize.width > 768) setIsNavOpen(false);
-    },
-    [screenSize.width],
-  );
+  const closeNav = () => setIsMobileNavOpen(false);
+
+  useEffect(() => {
+    if (width > 768) closeNav();
+  }, [width]);
+
+  useEffect(() => {
+    if (isMobileNavOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => (document.body.style.overflow = '');
+  }, [isMobileNavOpen]);
 
   function handleNavButton() {
-    setIsNavOpen((state) => !state);
+    setIsMobileNavOpen((state) => !state);
   }
 
   return (
@@ -46,26 +52,7 @@ export default function Header() {
         className="order-3 md:order-2"
       >
         <ul className="hidden items-center gap-5 rounded-xl bg-white px-10 py-5 text-black shadow-md md:flex">
-          <Navlink
-            link="#about-us"
-            text="About Us"
-            icon={<ImProfile className="size-6" />}
-          />
-          <Navlink
-            link="#features"
-            text="Features"
-            icon={<SlSocialDropbox className="size-6" />}
-          />
-          <Navlink
-            link="#trading"
-            text="Trading"
-            icon={<PiTrademarkRegisteredBold className="size-6" />}
-          />
-          <Navlink
-            link="#learn"
-            text="Learn"
-            icon={<TiInfoLarge className="size-6" />}
-          />
+          <NavList />
         </ul>
 
         <IoIosList
@@ -83,6 +70,10 @@ export default function Header() {
       >
         <MdLanguage className=" order-2 size-8 cursor-pointer duration-300 hover:scale-110" />
       </motion.div>
+
+      <AnimatePresence>
+        {isMobileNavOpen ? <MobileNav closeNav={closeNav} /> : null}
+      </AnimatePresence>
     </header>
   );
 }

@@ -8,6 +8,7 @@ module.exports = {
     screens: {
       vsm: "400px",
       ...defaultTheme.screens,
+      "3xl": "1600px",
     },
 
     extend: {

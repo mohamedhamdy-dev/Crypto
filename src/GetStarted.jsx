@@ -1,3 +1,4 @@
+import Button from './ui/Button';
 import FloatingImage from './ui/FloatingImage';
 import { motion } from 'motion/react';
 
@@ -34,9 +35,8 @@ export function GetStarted() {
             hidden fees, or unnecessary complexity. Empower your finances and
             take full control of your crypto journey.
           </motion.p>
-          <button className=" hover:border-primaryhover:bg-white mt-7  rounded-full border-2 border-transparent bg-primary px-3  py-2 text-white duration-300 hover:text-primary">
-            GET STARTED
-          </button>
+
+          <Button dark={true}>Learn More</Button>
         </section>
 
         <div className=" basis-2/4 ">

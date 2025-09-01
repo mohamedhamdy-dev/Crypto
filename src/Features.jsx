@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import Button from './ui/Button';
 
 const sections = [
   {
@@ -81,7 +82,7 @@ function FeatureApp() {
       </div>
       <div className="">EURO to GC</div>
       <form action="" className="min-w-52">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-center gap-4">
           <label className="block">
             From
             <input
@@ -98,9 +99,7 @@ function FeatureApp() {
           </label>
           <div className="">YOUR TOTAL</div>
           <div className="">1.00 GC = 10.000.000</div>
-          <button className=" self-center rounded-full border-2 border-primary bg-primary px-3 py-[6px] text-white duration-300 hover:bg-white hover:text-primary">
-            TRADE NOW
-          </button>
+          <Button dark={true}>Trade Now</Button>
         </div>
       </form>
 

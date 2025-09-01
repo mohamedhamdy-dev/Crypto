@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { useWindowSize } from './hooks/useWindowSize';
 
 const BenefitData = [
   {
@@ -16,11 +17,15 @@ const BenefitData = [
 ];
 
 export function WhyCrypto() {
+  const { width } = useWindowSize();
+  const isSmallMobile = width < 500;
+
+  console.log(isSmallMobile);
   return (
     <div className="overflow-x-clip bg-[#e7e7e7] text-primary">
       <div className="container relative mx-auto flex flex-col items-center gap-6 py-20 text-center lg:grid lg:grid-cols-3 lg:gap-x-28">
         <motion.h2
-          initial={{ x: 400 }}
+          initial={isSmallMobile ? { x: 250 } : { x: 400 }}
           whileInView={{ x: 0 }}
           transition={{ type: 'spring', stiffness: 80 }}
           className="text-center text-lg lg:col-span-3 lg:text-xl"
@@ -28,7 +33,7 @@ export function WhyCrypto() {
           WE MADE IT EASIER
         </motion.h2>
         <motion.h3
-          initial={{ x: -400 }}
+          initial={isSmallMobile ? { x: -250 } : { x: -400 }}
           whileInView={{ x: 0 }}
           transition={{ type: 'spring', stiffness: 80 }}
           className="mb-20 text-center text-6xl lg:col-span-3 lg:text-7xl"

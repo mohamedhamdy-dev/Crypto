@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import Button from './ui/Button';
 
 const sideImageVariants = {
   hidden: { x: -400 },
@@ -38,7 +39,7 @@ export function LearnMore() {
           initial={{ scale: 0, rotate: 360 }}
           whileInView={{ scale: 1, rotate: 0 }}
           transition={{ type: 'spring' }}
-          className="mx-auto mt-8 max-w-96 text-sm "
+          className="mx-auto mb-4 mt-8 max-w-96 text-sm "
         >
           Market capitalization, or <strong>market cap</strong>, is one of the
           key indicators used to measure the value and size of a cryptocurrency.
@@ -51,18 +52,7 @@ export function LearnMore() {
           with high potential or established large-cap assets that bring
           stability.
         </motion.p>
-        <button
-          className="hover mt-6 rounded-full border-2 
-          bg-transparent px-2 py-1 text-sm
-          uppercase
-          text-white duration-300
-        hover:bg-white hover:text-primary sm:py-2 
-        2xl:px-3
-
-        "
-        >
-          Learn More
-        </button>
+        <Button dark={false}>Learn More</Button>
       </section>
     </div>
   );

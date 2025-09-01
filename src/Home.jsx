@@ -1,8 +1,9 @@
 import { motion } from 'motion/react';
+import Button from './ui/Button';
 
 export function Home() {
   return (
-    <div className="container mx-auto flex flex-col gap-8 py-10 text-white lg:grid lg:grid-cols-3 lg:gap-10 lg:px-10 ">
+    <div className="3xl:py-20 container mx-auto flex flex-col gap-8  py-10 text-white lg:grid lg:grid-cols-3 lg:gap-10 lg:px-10  ">
       {/* Left section */}
       <motion.div
         initial={{ x: -80 }}
@@ -19,9 +20,7 @@ export function Home() {
         </h2>
 
         <div className="flex justify-center lg:justify-start">
-          <button className=" rounded-full  border-2 border-white px-3 py-2 ">
-            Get Started
-          </button>
+          <Button dark={false}>Learn More</Button>
         </div>
       </motion.div>
 

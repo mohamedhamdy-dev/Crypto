@@ -8,13 +8,11 @@ export function About() {
 
   const isDesktop = width > 1024;
 
-  console.log(isDesktop);
-
   return (
     <section
       id="about-us"
       ref={refConstraints}
-      className="container mx-auto flex flex-col items-center gap-8 text-white lg:grid lg:h-screen lg:grid-cols-4"
+      className="container mx-auto flex flex-col items-center gap-8 py-10 text-white sm:py-0  lg:grid lg:h-screen lg:grid-cols-4"
     >
       <div className="flex h-full  flex-col justify-end  lg:py-28">
         <motion.img
@@ -51,8 +49,10 @@ export function About() {
 
       <div className="flex h-full flex-col justify-start lg:py-28">
         <motion.img
-          initial={isDesktop ? { y: 200, cursor: 'grab' } : { x: 200 }}
-          whileInView={isDesktop ? { y: 0 } : { x: 0 }}
+          initial={
+            isDesktop ? { y: 200, cursor: 'grab' } : { scale: 0, rotate: 360 }
+          }
+          whileInView={isDesktop ? { y: 0 } : { scale: 1, rotate: 0 }}
           transition={{ type: 'spring' }}
           drag
           dragConstraints={refConstraints}
