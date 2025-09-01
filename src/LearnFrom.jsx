@@ -29,8 +29,8 @@ const cardData = [
 
 export function LearnFrom() {
   return (
-    <div class="container mx-auto flex  flex-col items-center gap-7 py-10 md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-12 md:px-10 xl:gap-x-0">
-      <h1 class="mb-8 text-center text-[44px] capitalize sm:text-6xl md:col-span-2 md:col-start-1 lg:text-7xl xl:text-8xl">
+    <div className="container mx-auto flex  flex-col items-center gap-7 py-10 md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-12 md:px-10 xl:gap-x-0">
+      <h1 className="mb-8 text-center text-[44px] capitalize sm:text-6xl md:col-span-2 md:col-start-1 lg:text-7xl xl:text-8xl">
         learn from the best
       </h1>
 
