@@ -10,7 +10,7 @@ export function LearnMore() {
   return (
     <div
       id="learn"
-      className="my-10 flex flex-col-reverse gap-10 lg:my-0 lg:flex-row"
+      className="flex flex-col-reverse gap-10 py-10 lg:flex-row lg:gap-20"
     >
       <div className="lg:basis-2/5">
         <motion.img
@@ -38,7 +38,7 @@ export function LearnMore() {
           initial={{ scale: 0, rotate: 360 }}
           whileInView={{ scale: 1, rotate: 0 }}
           transition={{ type: 'spring' }}
-          className="mx-auto mt-8 max-w-96 text-sm"
+          className="mx-auto mt-8 max-w-96 text-sm "
         >
           Market capitalization, or <strong>market cap</strong>, is one of the
           key indicators used to measure the value and size of a cryptocurrency.

@@ -1,24 +1,29 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useWindowSize } from './hooks/useWindowSize';
 
 export function About() {
   const refConstraints = useRef();
+  const { width } = useWindowSize();
+
+  const isDesktop = width > 1024;
+
+  console.log(isDesktop);
 
   return (
     <section
       id="about-us"
       ref={refConstraints}
-      className="container mx-auto my-14 flex h-screen flex-col items-center gap-8 text-white lg:my-0 lg:grid  lg:grid-cols-4 "
+      className="container mx-auto flex flex-col items-center gap-8 text-white lg:grid lg:h-screen lg:grid-cols-4"
     >
-      <div className="flex flex-col-reverse justify-center">
+      <div className="flex h-full  flex-col justify-end  lg:py-28">
         <motion.img
-          initial={{ y: -200, cursor: 'grab' }}
-          whileInView={{ y: 0 }}
+          initial={isDesktop ? { y: -200, cursor: 'grab' } : { x: -200 }}
+          whileInView={isDesktop ? { y: 0 } : { x: 0 }}
           transition={{ type: 'spring' }}
           drag
           dragConstraints={refConstraints}
           whileDrag={{ cursor: 'grabbing' }}
-          className=" lg:-ml-10 lg:mt-96"
           src="/About/21.png"
           alt="Crypto Image"
         />
@@ -28,11 +33,13 @@ export function About() {
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         transition={{ type: 'spring' }}
-        className="col-span-2 flex flex-col items-center justify-between gap-10   text-center "
+        className="col-span-2 flex flex-col items-center justify-between gap-10 text-center "
       >
-        <h5 className="text-lg lg:text-xl ">WHAT WE STAND FOR</h5>
-        <h6 className="text-5xl  lg:text-8xl">Trusted and Transparent.</h6>
-        <p className=" max-w-prose ">
+        <h5 className="text-lg lg:text-xl">WHAT WE STAND FOR</h5>
+        <h6 className="text-5xl  xl:text-7xl 2xl:text-8xl">
+          Trusted and Transparent.
+        </h6>
+        <p className=" max-w-prose text-sm">
           At <strong>Crypto</strong>, we believe that financial freedom should
           be accessible to everyone. Our mission is to make cryptocurrency
           simple, secure, and transparent—empowering individuals to invest,
@@ -42,15 +49,14 @@ export function About() {
         </p>
       </motion.article>
 
-      <div className="flex flex-col-reverse justify-center">
+      <div className="flex h-full flex-col justify-start lg:py-28">
         <motion.img
-          initial={{ y: 200, cursor: 'grab' }}
-          whileInView={{ y: 0 }}
+          initial={isDesktop ? { y: 200, cursor: 'grab' } : { x: 200 }}
+          whileInView={isDesktop ? { y: 0 } : { x: 0 }}
           transition={{ type: 'spring' }}
           drag
           dragConstraints={refConstraints}
           whileDrag={{ cursor: 'grabbing' }}
-          className="lg:-mr-8 lg:mb-96"
           src="/About/22.png"
           alt="Crypto Image"
         />

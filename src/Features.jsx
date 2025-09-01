@@ -23,9 +23,7 @@ export function Features() {
   return (
     <div
       id="features"
-      className=" container mx-auto mt-24 flex h-screen
-     flex-col items-center gap-10 text-center md:grid md:grid-cols-2
-     lg:mt-0 lg:grid-cols-3  lg:grid-rows-3  lg:gap-0"
+      className=" container mx-auto flex flex-col items-center gap-10 py-10 text-center md:grid md:grid-cols-2 lg:h-screen lg:grid-cols-3 lg:grid-rows-3 lg:gap-0"
     >
       <h2
         className=" col-span-2 row-span-1 mb-16 text-6xl md:text-8xl lg:col-span-1 lg:col-start-2
@@ -47,11 +45,7 @@ export function Features() {
         <FeatureSection sectionData={sections[3]} />
       </div>
 
-      <div
-        className=" col-span-2 flex  flex-col
-      items-center justify-self-center pb-14 sm:w-[65%]
-       lg:col-start-2 lg:col-end-3 lg:row-span-3  lg:row-start-2 lg:-mt-20  xl:w-full "
-      >
+      <div className="col-span-2 flex flex-col items-center justify-self-center sm:w-[65%] lg:col-start-2 lg:col-end-3 lg:row-span-3 lg:row-start-2 lg:-mt-20 xl:w-full ">
         <FeatureApp />
       </div>
     </div>
@@ -68,7 +62,7 @@ function FeatureSection({ sectionData }) {
       className="text-balance text-center"
     >
       <h3 className="text-lg">{title}</h3>
-      <p className=" mx-auto  max-w-96 text-balance p-4 pt-2 text-sm">{text}</p>
+      <p className=" mx-auto max-w-96 text-balance p-4 pt-2 text-sm">{text}</p>
     </motion.section>
   );
 }
@@ -79,15 +73,15 @@ function FeatureApp() {
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
       transition={{ type: 'spring' }}
-      className="flex flex-col gap-4 rounded-2xl bg-white  px-14 py-16 pt-8 text-primary"
+      className="flex flex-col gap-4 rounded-2xl bg-white px-14 py-16 pt-8 text-primary"
     >
       <div className="mx-auto w-fit ">
         <img src="/logo.png" alt="" />
         <h4 className="">Coinmyte.</h4>
       </div>
       <div className="">EURO to GC</div>
-      <form action="">
-        <div className=" flex flex-col gap-4">
+      <form action="" className="min-w-52">
+        <div className="flex flex-col gap-4">
           <label className="block">
             From
             <input

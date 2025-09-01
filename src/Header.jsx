@@ -4,9 +4,10 @@ import { TiInfoLarge } from 'react-icons/ti';
 import { SlSocialDropbox } from 'react-icons/sl';
 import { PiTrademarkRegisteredBold } from 'react-icons/pi';
 import { ImProfile } from 'react-icons/im';
-import { IoIosSearch } from 'react-icons/io';
 import Navlink from './ui/Navlink';
 import { motion } from 'motion/react';
+import { MdLanguage } from 'react-icons/md';
+import { IoIosList } from 'react-icons/io';
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -24,14 +25,14 @@ export default function Header() {
   }
 
   return (
-    <header className="relative  mx-auto flex items-center justify-between md:container lg:px-10">
+    <header className="relative mx-auto flex items-center justify-between px-5 md:container sm:px-10">
       <motion.a
         initial={{ y: -50 }}
         whileInView={{ y: 0 }}
         whileHover={{ scale: 1.2 }}
         transition={{ type: 'spring' }}
         href="/"
-        className="p-2"
+        className="order-2 p-2 md:order-1"
       >
         <motion.img className=" mx-auto max-w-14 " src="/logo.png" alt="logo" />
         <h1 className="-mt-2 antialiased">Crypto</h1>
@@ -42,7 +43,7 @@ export default function Header() {
         whileInView={{ y: 0 }}
         whileHover={{ scale: 1.05 }}
         transition={{ type: 'spring' }}
-        className="flex"
+        className="order-3 md:order-2"
       >
         <ul className="hidden items-center gap-5 rounded-xl bg-white px-10 py-5 text-black shadow-md md:flex">
           <Navlink
@@ -66,15 +67,11 @@ export default function Header() {
             icon={<TiInfoLarge className="size-6" />}
           />
         </ul>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="white"
-          viewBox="0 0 256 256"
-          className="mr-2 h-8 w-8 cursor-pointer md:hidden"
+
+        <IoIosList
+          className="h-8 w-8 cursor-pointer md:hidden"
           onClick={handleNavButton}
-        >
-          <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
-        </svg>
+        />
       </motion.nav>
 
       <motion.div
@@ -82,9 +79,9 @@ export default function Header() {
         whileInView={{ y: 0 }}
         whileHover={{ scale: 1.2 }}
         transition={{ type: 'spring' }}
-        className="hidden p-4 lg:block"
+        className="order-1 md:order-3"
       >
-        <IoIosSearch className="size-10 cursor-pointer duration-300 hover:scale-110" />
+        <MdLanguage className=" order-2 size-8 cursor-pointer duration-300 hover:scale-110" />
       </motion.div>
     </header>
   );

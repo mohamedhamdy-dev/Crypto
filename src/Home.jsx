@@ -1,12 +1,8 @@
-import Button from './ui/Button';
 import { motion } from 'motion/react';
 
 export function Home() {
   return (
-    <div
-      className="container mx-auto mb-8 flex flex-col gap-8 py-20 text-white 
-      lg:grid lg:grid-cols-3 lg:gap-10 lg:px-10 "
-    >
+    <div className="container mx-auto flex flex-col gap-8 py-10 text-white lg:grid lg:grid-cols-3 lg:gap-10 lg:px-10 ">
       {/* Left section */}
       <motion.div
         initial={{ x: -80 }}
@@ -18,12 +14,14 @@ export function Home() {
           WE MADE It EASY
         </pre>
 
-        <h2 className="mx-auto  text-center text-8xl font-bold leading-tight  lg:text-left">
+        <h2 className="mx-auto  text-center text-8xl font-bold leading-tight lg:text-left lg:text-5xl  xl:text-7xl">
           Trade Smarter.
         </h2>
 
-        <div className="">
-          <Button className="sm:text-base lg:text-sm">Get Started</Button>
+        <div className="flex justify-center lg:justify-start">
+          <button className=" rounded-full  border-2 border-white px-3 py-2 ">
+            Get Started
+          </button>
         </div>
       </motion.div>
 
@@ -35,8 +33,8 @@ export function Home() {
           whileHover={{ rotate: 12 }}
           transition={{ type: 'spring' }}
           src="/Home/11.png"
-          className="h-auto w-full object-cover lg:relative lg:top-24 xl:top-5"
-          alt="Crypto trading illustration"
+          className="w-full object-cover "
+          alt="Crypto trading"
         />
       </div>
 
