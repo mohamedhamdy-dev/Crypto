@@ -1,9 +1,7 @@
-import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useWindowSize } from './hooks/useWindowSize';
 
 export function About() {
-  const refConstraints = useRef();
   const { width } = useWindowSize();
 
   const isDesktop = width > 1024;
@@ -11,7 +9,6 @@ export function About() {
   return (
     <section
       id="about-us"
-      ref={refConstraints}
       className="container mx-auto flex flex-col items-center gap-8 py-10 text-white sm:py-0  lg:grid lg:h-screen lg:grid-cols-4"
     >
       <div className="flex h-full  flex-col justify-end  lg:py-28">
@@ -20,8 +17,8 @@ export function About() {
           whileInView={isDesktop ? { y: 0 } : { x: 0 }}
           transition={{ type: 'spring' }}
           drag
-          dragConstraints={refConstraints}
-          whileDrag={{ cursor: 'grabbing' }}
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+          whileDrag={{ cursor: 'grabbing', scale: 1.1 }}
           src="/About/21.png"
           alt="Crypto Image"
         />
@@ -55,8 +52,8 @@ export function About() {
           whileInView={isDesktop ? { y: 0 } : { scale: 1, rotate: 0 }}
           transition={{ type: 'spring' }}
           drag
-          dragConstraints={refConstraints}
-          whileDrag={{ cursor: 'grabbing' }}
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+          whileDrag={{ cursor: 'grabbing', scale: 1.1 }}
           src="/About/22.png"
           alt="Crypto Image"
         />

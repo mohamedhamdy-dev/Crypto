@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import Button from './ui/Button';
+import FeatureApp from './ui/FeatureApp';
 
 const sections = [
   {
@@ -65,55 +65,5 @@ function FeatureSection({ sectionData }) {
       <h3 className="text-lg">{title}</h3>
       <p className=" mx-auto max-w-96 text-balance p-4 pt-2 text-sm">{text}</p>
     </motion.section>
-  );
-}
-
-function FeatureApp() {
-  return (
-    <motion.div
-      initial={{ scale: 0 }}
-      whileInView={{ scale: 1 }}
-      transition={{ type: 'spring' }}
-      className="flex flex-col gap-4 rounded-2xl bg-white px-14 py-16 pt-8 text-primary"
-    >
-      <div className="mx-auto w-fit ">
-        <img src="/logo.png" alt="app logo" />
-        <h4 className="">Coinmyte.</h4>
-      </div>
-      <div className="">EURO to GC</div>
-      <form action="" className="min-w-52">
-        <div className="flex flex-col items-center gap-4">
-          <label className="block">
-            From
-            <input
-              className="mt-1 block w-full rounded-full border-[1px] border-primary px-4 py-[6px] text-base"
-              type="text"
-            />
-          </label>
-          <label className="block">
-            To
-            <input
-              className="mt-1 block w-full  rounded-full border-[1px] border-primary px-4 py-[6px] text-base"
-              type="text"
-            />
-          </label>
-          <div className="">YOUR TOTAL</div>
-          <div className="">1.00 GC = 10.000.000</div>
-          <Button dark={true}>Trade Now</Button>
-        </div>
-      </form>
-
-      <div className="flex justify-between gap-2 text-sm text-gray-800">
-        <a className="  hover:text-primary" href="#pricing">
-          PRICING
-        </a>
-        <a className=" hover:text-primary" href="#faqs">
-          FAQS
-        </a>
-        <a className="  hover:text-primary" href="#trading">
-          TRADING BASICS
-        </a>
-      </div>
-    </motion.div>
   );
 }

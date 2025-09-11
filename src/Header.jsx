@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { MdLanguage } from 'react-icons/md';
 import { IoIosList } from 'react-icons/io';
 import { useWindowSize } from './hooks/useWindowSize';
 import NavList from './ui/NavList';
 import MobileNav from './ui/MobileNav';
+import ContactDropdown from './ui/ContactDropdown';
 
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -61,15 +61,7 @@ export default function Header() {
         />
       </motion.nav>
 
-      <motion.div
-        initial={{ y: -50 }}
-        whileInView={{ y: 0 }}
-        whileHover={{ scale: 1.2 }}
-        transition={{ type: 'spring' }}
-        className="order-1 md:order-3"
-      >
-        <MdLanguage className=" order-2 size-8 cursor-pointer duration-300 hover:scale-110" />
-      </motion.div>
+      <ContactDropdown />
 
       <AnimatePresence>
         {isMobileNavOpen ? <MobileNav closeNav={closeNav} /> : null}
